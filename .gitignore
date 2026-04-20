@@ -1,0 +1,15 @@
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+node_modules/
+dist/
+dist-chrome/
+dist-firefox/
+dist-edge/
+build/
+coverage/
+.env
+.idea/
+.vscode/

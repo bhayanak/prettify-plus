@@ -1,0 +1,62 @@
+{
+  "name": "prettify-plus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Universal format viewer — beautify JSON, YAML, XML, TOML & CSV in your browser",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && vite build --config vite.config.content.ts && vite build --config vite.config.background.ts && cp -r public/manifest.json public/icons dist/",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint 'src/**/*.{ts,tsx}' 'test/**/*.ts'",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx,css}' 'test/**/*.ts'",
+    "format": "prettier --write 'src/**/*.{ts,tsx,css}' 'test/**/*.ts'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "ci": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm audit --audit-level=critical && pnpm run test:coverage && pnpm run build",
+    "package:chrome": "mkdir -p dist-chrome && cd dist && zip -r ../dist-chrome/prettify-plus-chrome.zip .",
+    "package:firefox": "mkdir -p dist-firefox && cd dist && zip -r ../dist-firefox/prettify-plus-firefox.xpi .",
+    "package:edge": "mkdir -p dist-edge && cd dist && zip -r ../dist-edge/prettify-plus-edge.zip .",
+    "generate:icons": "tsx scripts/generate-icons.ts"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "fast-xml-parser": "^4.5.1",
+    "js-yaml": "^4.1.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.28",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/chrome": "^0.1.40",
+    "@types/js-yaml": "^4.0.9",
+    "@types/papaparse": "^5.3.15",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^2.1.8",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-security": "^3.0.1",
+    "jsdom": "^25.0.1",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.16",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -23,7 +23,7 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - name: CI — typecheck + lint + format + audit + test + build
-        run: pnpm ci
+        run: pnpm run ci
 
   security:
     runs-on: ubuntu-latest

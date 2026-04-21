@@ -16,7 +16,7 @@ jobs:
           node-version: 20
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm ci
+      - run: pnpm run ci
       - run: pnpm package:chrome && pnpm package:firefox && pnpm package:edge
       - uses: anchore/sbom-action@v0
         with:

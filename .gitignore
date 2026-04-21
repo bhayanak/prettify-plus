@@ -13,3 +13,5 @@ coverage/
 .env
 .idea/
 .vscode/
+*.md
+!README.md

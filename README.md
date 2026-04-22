@@ -65,38 +65,19 @@ To use Prettify Plus with local files (`file://` URLs):
 
 > **Recommended**: Set to **"On all sites"** for the best experience. The extension only activates when it detects valid JSON/YAML/XML/TOML/CSV content.
 
-## Development
+## Screens
+<p align="center">
+  <img src="public/screens/main.png" width="400" alt="Screenshot 1" />
+  <img src="public/screens/config-1.png" width="400" alt="Screenshot 2" />
+</p>
 
-```bash
-pnpm dev
-```
+<p align="center">
+  <img src="public/screens/use-1.png" width="800" alt="Screenshot 3" />
+</p>
 
-## Build
-
-```bash
-pnpm build
-```
-
-## Test
-
-```bash
-pnpm test              # Run tests
-pnpm test:coverage     # Run with coverage
-```
-
-## Full CI Pipeline
-
-```bash
-pnpm ci   # typecheck → lint → format:check → audit → test:coverage → build
-```
-
-## Package
-
-```bash
-pnpm package:chrome    # Chrome Web Store (.zip)
-pnpm package:firefox   # Firefox Add-ons (.xpi)
-pnpm package:edge      # Edge Add-ons (.zip)
-```
+<p align="center">
+  <img src="public/screens/use-2.png" width="800" alt="Screenshot 4" />
+</p>
 
 ## License
 

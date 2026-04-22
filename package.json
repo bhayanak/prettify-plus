@@ -16,9 +16,9 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "ci": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm audit --audit-level=critical && pnpm run test:coverage && pnpm run build",
-    "package:chrome": "mkdir -p dist-chrome && cd dist && zip -r ../dist-chrome/prettify-plus-chrome.zip .",
-    "package:firefox": "mkdir -p dist-firefox && cd dist && zip -r ../dist-firefox/prettify-plus-firefox.xpi .",
-    "package:edge": "mkdir -p dist-edge && cd dist && zip -r ../dist-edge/prettify-plus-edge.zip .",
+    "package:chrome": "node scripts/package-chrome.mjs",
+    "package:firefox": "node scripts/package-firefox.mjs",
+    "package:edge": "node scripts/package-edge.mjs",
     "generate:icons": "tsx scripts/generate-icons.ts"
   },
   "dependencies": {
